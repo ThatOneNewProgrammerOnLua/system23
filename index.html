@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roblox Builder Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+            color: rgba(255, 255, 255, 0.9);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            padding: 60px 0;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 20px;
+            margin-bottom: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .header h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #ffffff, #cccccc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header p {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 30px;
+        }
+
+        .skills-section {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            border-radius: 15px;
+            margin-bottom: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .skills-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.25);
+        }
+
+        .skill-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .skill-card p {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+        }
+
+        .portfolio-section {
+            margin-bottom: 50px;
+        }
+
+        .portfolio-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .portfolio-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-8px);
+            border-color: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .portfolio-image {
+            width: 100%;
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .image-placeholder {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 1.1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .portfolio-content {
+            padding: 25px;
+        }
+
+        .portfolio-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .portfolio-content p {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            background: rgba(255, 255, 255, 0.15);
+            color: rgba(255, 255, 255, 0.9);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .contact-section {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 50px;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .contact-section p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 30px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 20px 30px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.12);
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <h1>Roblox Builder Portfolio</h1>
+            <p>Professional Building & Development Services</p>
+        </div>
+
+        <!-- Skills Section -->
+        <div class="skills-section">
+            <h2>What I Can Do</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>🏗️ Professional Building</h3>
+                    <p>Expert in creating detailed structures, environments, and architectural designs using Roblox Studio's building tools.</p>
+                </div>
+                <div class="skill-card">
+                    <h3>🎨 Environmental Design</h3>
+                    <p>Crafting immersive worlds and landscapes with attention to detail, lighting, and atmospheric elements.</p>
+                </div>
+                <div class="skill-card">
+                    <h3>🏛️ Architectural Structures</h3>
+                    <p>Building complex architectural projects from modern buildings to fantasy castles with precision and creativity.</p>
+                </div>
+                <div class="skill-card">
+                    <h3>⚡ Optimization</h3>
+                    <p>Creating efficient builds that maintain visual quality while ensuring optimal performance and part count.</p>
+                </div>
+                <div class="skill-card">
+                    <h3>🎯 Custom Commissions</h3>
+                    <p>Working with clients to bring their unique visions to life through collaborative building projects.</p>
+                </div>
+                <div class="skill-card">
+                    <h3>📐 Technical Building</h3>
+                    <p>Utilizing advanced building techniques, unions, and CSG operations for complex geometric structures.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Portfolio Section -->
+        <div class="portfolio-section">
+            <h2>My Recent Work</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-image" style="background-image: url('data:image/jpeg;base64,iVBORw0KGgoAAAANSUhEUgAABLAAAAD6CAYAAACtb2tnAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAP+lSURBVHhe7L35vxxXnf/7/TdFPyKSBBIkITNGBmOMbQzGNjY2tsE2Nra3ej23u+/t7r699919u9frfbXJ7zO/59f5nfd6rr31fr9fd7d6t9c/9/7/7fe999/7b6//3/tv7/+3b7/99ttvv/322////+////Ttv333/fftmzfv33/ftmzfv33/99+/f77+9+////777///Tv//+/fttm/fv33//9+++67b9++2b7/9tvv/72zb//99u3777ttv33b5v377Z//+22/7/3779v/+//7bbvv/vv/2//fbt++++f7b//7b9/+977b9//77b99v337779t/2/77t/++37///P/+77v/+77/+779u/3777f//u+f/7tf/fv32/ffvtv/77799v/++37b//+2//7vv//u3777797d//+379v+/ff5v///3377b9//++777////t+3/3779v//u+79t/++/bbt+//////Tv+222+//f/vv///3/fb//++Tv+2/7/99v////f///btv//////779v+++++++7/v//u+22/39+////7f//b//7/Tv///e+7//77+/+//7d//v/77/77999v+////77/b//+/7bt//////f//+//3+//bvv/+77/9////z/3++/+77//7//3//77/77//77b9//v37b/v/7/+///Tv/////bt////Tv//++77v///f/9+3//f//9v37bt///77////P/v+/7/77+v/7f///////+/////77///b//f/////////////////////////////////////77///f///t++/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////77bvvv/37b///+77bt///v+2////3//777b/t////3/37b//77/7//+77/7///77////////////+///7///////////////////////////////77///77b//////+77///v///+7/77////////////v/////////////////////P//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////77+/////77+////////Tv////////77////////////+++7/77///////+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////77b7////P/77/77////+///////////////////////////77//b/b//b//v/77b/b//b//77////77///77/77//77//7//7/77v//777//7//7//7/77/777//7///77//7//7//7/77///77//77/77/77/77//77/777//777//77/777//77//7///77//7///77//')])"></div>
+                    <div class="portfolio-content">
+                        <h3>Fantasy Castle</h3>
+                        <p>A majestic fantasy castle featuring detailed stone architecture, multiple towers with conical roofs, and intricate detailing. Built with careful attention to medieval architectural elements and atmospheric lighting.</p>
+                        <div class="tags">
+                            <span class="tag">Fantasy</span>
+                            <span class="tag">Medieval</span>
+                            <span class="tag">Castle</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="portfolio-image" style="background-image: url('data:image/jpeg;base64,iVBORw0KGgoAAAANSUhEUgAABkAAAAD6CAYAAABb5+ZAAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAP+lSURBVHhe7P+5v+xXnd/7/TdFPyKSBBIkITNGBmOMbQzGNjY2tsE2Nra3uj23u+/t7r699939fd7d6t9c/9/7b++/vf/2/v/7//9+++77999u3777ttv33b7t99++fv//++++777/9+++67b9++2b7/9t/2/77t/++37///P/+77v/+77/+779u/3777f//u+f/7tf/fv32/ffvtv/77799v/++37b//+2//7vv//u3777797d//+379v+/ff5v///3377b9//++777////t+3/3779v//u+79t/++/bbt+//////Tv+222+//f/vv///3/fb//++Tv+2/7/99v////f///btv//////779v+++++++7/v//u+22/39+////7f//b//7/Tv///e+7//77+/+//7d//v/77/77999v+////77/b//+/7bt//////f//+//3+//bvv/+77/9////z/3++/+77//7//3//77/77//77b9//v37b/v/7/+///Tv/////bt////Tv//++77v///f/9+3//f//9v37bt///77////P/v+/7/77+v/7f///////+/////77///b//f/////////////////////////////////////77///f///t++/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////77bvvv/37b///+77bt///v+2////3//777b/t////3/37b//77/7//+77/7///77////////////+///7///////////////////////////////77///77b//////+77///v///+7/77////////////v/////////////////////P//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////77+/////77+////////Tv////////77////////////+++7/77///////+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////77b7////P/77/77////+///////////////////////////77//b/b//b//v/77b/b//b//77////77///77/77//77//7//7/77v//777//7//7//7/77/777//7///77//7//7//7/77///77//77/77/77/77//77/777//777//77/777//77//7///77//7///77//')"></div>
+                    <div class="portfolio-content">
+                        <h3>Modern Shopping Center</h3>
+                        <p>A contemporary commercial complex featuring a Fresh&Co grocery store with professional signage, modern glass facades, and realistic retail design. Demonstrates expertise in modern architectural styles and commercial building design.</p>
+                        <div class="tags">
+                            <span class="tag">Modern</span>
+                            <span class="tag">Commercial</span>
+                            <span class="tag">Retail</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="image-placeholder">
+                        Future Project Showcase
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>More Projects Coming Soon</h3>
+                        <p>Stay tuned for more impressive builds showcasing various architectural styles and creative designs.</p>
+                        <div class="tags">
+                            <span class="tag">Coming Soon</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="image-placeholder">
+                        Future Project Showcase
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>More Projects Coming Soon</h3>
+                        <p>Stay tuned for more impressive builds showcasing various architectural styles and creative designs.</p>
+                        <div class="tags">
+                            <span class="tag">Coming Soon</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="image-placeholder">
+                        Future Project Showcase
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>More Projects Coming Soon</h3>
+                        <p>Stay tuned for more impressive builds showcasing various architectural styles and creative designs.</p>
+                        <div class="tags">
+                            <span class="tag">Coming Soon</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="image-placeholder">
+                        Future Project Showcase
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>More Projects Coming Soon</h3>
+                        <p>Stay tuned for more impressive builds showcasing various architectural styles and creative designs.</p>
+                        <div class="tags">
+                            <span class="tag">Coming Soon</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="contact-section">
+            <h2>Let's Work Together</h2>
+            <p>Ready to bring your vision to life? Get in touch for custom building projects!</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <strong>Roblox Username</strong><br>
+                    <span style="color: rgba(255,255,255,0.7);">carlito1258</span>
+                </div>
+                <div class="contact-item">
+                    <strong>Discord</strong><br>
+                    <span style="color: rgba(255,255,255,0.7);">the_myth1</span>
+                </div>
+                <div class="contact-item">
+                    <strong>Status</strong><br>
+                    <span style="color: #4CAF50;">Available for Work</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add some interactive effects
+        document.addEventListener('DOMContentLoaded', function() {
+            const portfolioItems = document.querySelectorAll('.portfolio-item');
+            portfolioItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-8px) scale(1.02)';
+                });
+                item.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
