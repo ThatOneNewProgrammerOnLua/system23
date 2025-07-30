@@ -338,24 +338,53 @@
             }
         }
 
-        @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2.5rem;
-            }
-            
-            .portfolio-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .contact-info {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
+@media (max-width: 768px) {
+    body {
+        background: 
+            linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #000000 100%) !important,
+            radial-gradient(circle at 20% 80%, rgba(255,255,255,0.03) 0%, transparent 50%),
+            radial-gradient(circle at 80% 20%, rgba(255,255,255,0.03) 0%, transparent 50%);
+        background-attachment: fixed;
+    }
+
+    body::before {
+        background-image: 
+            linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px),
+            linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px) !important;
+        background-size: 60px 60px, 60px 60px, 15px 15px, 15px 15px !important;
+    }
+
+    .header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-info {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    .header {
+        padding: 80px 0;
+    }
+
+    .skills-section, .portfolio-section, .contact-section {
+        margin-bottom: 40px;
+    }
+}
 </style>
 </head>
 <body>
