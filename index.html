@@ -285,6 +285,7 @@
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
+            margin-bottom: 20px;
         }
 
         .tag {
@@ -301,6 +302,34 @@
         .tag:hover {
             background: rgba(255, 255, 255, 0.2);
             border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        /* Button styles for 3rd card only */
+        .portfolio-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, rgba(240, 240, 240, 0.9) 0%, rgba(200, 200, 200, 0.8) 50%, rgba(180, 180, 180, 0.9) 100%);
+            color: rgba(20, 20, 20, 0.9);
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+            text-align: center;
+            letter-spacing: 0.5px;
+        }
+
+        .portfolio-button:hover {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(220, 220, 220, 0.9) 50%, rgba(200, 200, 200, 0.95) 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .portfolio-button:active {
+            transform: translateY(0);
         }
 
         .contact-section {
@@ -494,16 +523,18 @@
 
                 <div class="portfolio-item">
                     <div class="dual-image-container">
-                        <div class="dual-image" style="background-image: url('Wendy1.jpg')"></div>
-                        <div class="dual-image" style="background-image: url('Wendy2.jpg')"></div>
+                        <div class="dual-image" style="background-image: url('image1.jpg')"></div>
+                        <div class="dual-image" style="background-image: url('image2.jpg')"></div>
                     </div>
                     <div class="portfolio-content">
-                        <h3>Wendy's Restaurant</h3>
-                        <p>A Wendy's Restaurant with an interior.</p>
+                        <h3>Wendy's Restaurant Build</h3>
+                        <p>A detailed recreation of the iconic Wendy's fast food restaurant featuring accurate branding, interior layout, and architectural elements. Perfect for roleplay games and commercial districts.</p>
                         <div class="tags">
-                            <span class="tag">Dual Build</span>
-                            <span class="tag">Showcase</span>
+                            <span class="tag">Commercial</span>
+                            <span class="tag">Restaurant</span>
+                            <span class="tag">Detailed</span>
                         </div>
+                        <a href="https://create.roblox.com/store/asset/119344097852072/Wendys" target="_blank" class="portfolio-button">Get</a>
                     </div>
                 </div>
 
@@ -585,5 +616,3 @@
     </script>
 </body>
 </html>
-
-
